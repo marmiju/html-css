@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <title>airsyl</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="header__container">
+            <a href="/" class="header__logo">
+                <img src="/images/logo.png" alt="Airsyl Logo">
+            </a>
+
+            <div class="actionBar">
+                <div class="header__action">
+                    <button class="btn btn-mini btn-outline">register</button>
+                    <button class="btn btn-mini btn-fill">logIn</button>
+                </div>
+
+                <div class="navbar">
+                    <nav class="nav">
+                        <a href="/" class="nav__item">Home</a>
+                        <a href="/" class="nav__item">About</a>
+                        <a href="/" class="nav__item">Services</a>
+                    </nav>
+
+                    <div class="navbar__contact">
+                        <img src="/images/headphone.png" alt="contact-logo">
+                        <p> call Us<br>
+                            <mark>(+88) 01404-000734<span>•</span>supprt@airsyl.com</mark>
+                        </p>
+                    </div>
+                    <button class="btn">Contact Us</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+       <section class="hero">
+          
+
+            <div class="hero__overlay">
+                <form class="booking-widget">
+                    <div class="booking-widget__type">
+                        <label class="radio-group">
+                            <input type="radio" name="trip-type" checked> 
+                            <label class="radio-group__label">One - Way</label>
+                        </label>
+                        <label class="radio-group">
+                            <input type="radio" name="trip-type"> 
+                            <label class="radio-group__label">Round - Trip</label>
+                        </label>
+                        <label class="radio-group">
+                            <input type="radio" name="trip-type"> 
+                            <label class="radio-group__label">Multicity</label>
+                        </label>
+                    </div>
+
+                    <div class="booking-widget__grid">
+                        <div class="input-group destination-left">
+                            <label for="from" class="input-group__label">From</label>
+                            <input type="text" id="from" class="input-group__field" value="Dhaka">
+                            <i class="fa-solid fa-location-dot input-group__icon"></i>
+                        </div>
+
+                        <button  class="booking-widget__swap " aria-label="Swap locations">
+                            ⇄
+                           
+                        </button>
+
+                        <div class="input-group destination-right">
+                            <label for="to" class="input-group__label">To</label>
+                            <input type="text" id="to" class="input-group__field" value="Chittagong">
+                            <i class="fa-solid fa-location-dot input-group__icon"></i>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="depart" class="input-group__label">Departure</label>
+                            <input type="date" id="depart" class="input-group__field">
+                        </div>
+                        <div class="input-group">
+                            <label for="return" class="input-group__label">Return</label>
+                            <input type="date" id="return" class="input-group__field">
+                        </div>
+                    </div>
+
+                    <div class="booking-widget__options">
+                        <select class="select-box">
+                            <option>Premium Economy</option>
+                        </select>
+                        <select class="select-box">
+                            <option>Adults</option>
+                        </select>
+                        <select class="select-box">
+                            <option>Kids</option>
+                        </select>
+                        <select class="select-box">
+                            <option>Infants</option>
+                        </select>
+                    </div>
+
+                    <div class="booking-widget__footer">
+                        <button type="submit" class="btn btn--search">Search</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
