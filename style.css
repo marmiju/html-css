@@ -12,8 +12,8 @@
     font-optical-sizing: auto;
 }
 
-header {
-    position: fixed;
+.header {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -25,11 +25,14 @@ header {
     padding: 0.8rem;
     border-radius: 100px;
     border: none;
+    text-transform: capitalize;
     box-shadow: inset rgba(0, 0, 0, 0.479);
     color: white;
     background-color: green;
     cursor: pointer;
+    z-index:1000;
 }
+
 
 .btn-mini {
     font-size: 0.8rem;
@@ -268,7 +271,7 @@ input[type="radio"] {
     font-size: 1.2rem;
 }
 
-.booking-widget__swap::after{
+.booking-widget__swap::after {
     content: "⇄";
     position: absolute;
     display: flex;
@@ -299,7 +302,7 @@ input[type="radio"] {
     width: 100%;
 }
 
-.input-group>img{
+.input-group>img {
     width: 25px;
     height: 25px;
     position: absolute;
@@ -307,9 +310,11 @@ input[type="radio"] {
     right: 10px;
     z-index: 3;
 }
-#left-margin{
-    border-left: 1px solid #eee ;
+
+#left-margin {
+    border-left: 1px solid #eee;
 }
+
 .input-group__label {
     font-size: 0.75rem;
     color: #022833;
@@ -362,4 +367,109 @@ input[type="radio"] {
     left: 0;
     right: 0;
     text-align: center;
+}
+
+/* for the category section ====================================================*/
+
+.category {
+    width: 100vw;
+    height: 400px;
+    margin-top: 500px;
+    background: linear-gradient(#221e1fde), url('/images//bg2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.category__container {
+    width: 1000px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    margin: 0px auto;
+    position: relative;
+}
+
+.card-overlay {
+    position: absolute;
+    height:100%;
+    width: 100%;
+    gap: 40px;
+    display: flex;
+    top: calc(-50%);
+    justify-content: center;
+    background-color: transparent;
+}
+
+
+.card {
+    border-radius: 20px;
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 8px;
+    color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+
+
+}
+
+.card:nth-child(1) {
+    background: linear-gradient(#3c3d90d5, #fa8282e3), url('/images//safety.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.card:nth-child(2) {
+    background: linear-gradient(#b5fcfcde, #0a4780de), url('/images//rate.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.card:nth-child(3) {
+    background: linear-gradient(#2199e9e7, #4c3e7ad5), url('/images//booking.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.card__title {
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.card__description {
+    font-size: 0.85rem;
+    font-style: normal;
+    font-weight: 300;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    line-height: 20px;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+.card__btn{
+    color: rgba(0, 0, 0, 0.877);
+    background-color: white;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 0.8rem;
+    width: 50%;
+}
+.card__icon{
+    position: absolute;
+    top: 30px;
+    right: 40px;
+}
+.category__btn{
+    position: absolute;
+    bottom: 20%;
+    padding: 10px 50px;
+    font-weight: 500;
 }
