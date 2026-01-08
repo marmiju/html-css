@@ -1,7 +1,15 @@
 * {
     margin: 0px;
     padding: 0px;
-    font-size: 14px;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+}
+
+/* font */
+
+.manrope {
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
 }
 
 header {
@@ -14,32 +22,29 @@ header {
 }
 
 .btn {
-    padding: 2px 20px;
-    border-radius: 50px;
-    height: 40px;
+    padding: 0.8rem;
+    border-radius: 100px;
     border: none;
     box-shadow: inset rgba(0, 0, 0, 0.479);
-    min-width: 100px;
     color: white;
     background-color: green;
+    cursor: pointer;
 }
 
 .btn-mini {
-    height: 28px;
-    font-size: 12px;
+    font-size: 0.8rem;
+    padding: 6px 16px;
 }
 
 .btn-outline {
     background-color: transparent;
     color: white;
-    padding: 5px 10px;
     border: 1px solid white;
 }
 
 .btn-fill {
     background-color: white;
     color: black;
-    padding: 5px 10px;
     border: 1px solid white;
 }
 
@@ -48,24 +53,24 @@ header {
     height: 60vh;
     background-image: url('/images/hero_image.png');
     background-size: cover;
-   
 }
+
 .overlay {
     position: relative;
     height: 60vh;
-    box-shadow: 10px 10px 20px rgba(0,0,0,0.2); 
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
     z-index: 1;
     overflow: hidden;
-    background: linear-gradient(to right,black,transparent,transparent);
+    background: linear-gradient(to right, black, transparent, transparent);
 }
 
 .overlay::before {
     content: "";
     position: absolute;
-    left: -50%;
+    left: -20%;
     top: -100%;
-    background: radial-gradient( #7B57CB, #6738cea4,transparent,transparent);
-    width: 100%;
+    background: radial-gradient(#7B57CB, #6738cea4, transparent, transparent);
+    width: 50%;
     height: 200%;
     z-index: 3;
 }
@@ -73,13 +78,13 @@ header {
 .overlay::after {
     content: "";
     position: absolute;
-    left: -300px;
+    left: -10%;
     bottom: -100%;
-    background: radial-gradient( #c40b0b79, #ff00003a,transparent,transparent);
-    width: 100%;
+    background: radial-gradient(#c40b0b79, #ff00003a, transparent, transparent);
+    width: 50%;
     height: 200%;
     z-index: -1;
-    
+
 }
 
 .header__container {
@@ -110,10 +115,19 @@ header {
     gap: 0.5em;
 }
 
-.header__action {
+.actionBar__action {
     display: flex;
     justify-content: right;
-    gap: 4px;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.actionBar__action_separator {
+    width: 16px;
+    height: 0px;
+    border: 1px solid white;
+    rotate: calc(90deg);
+    opacity: 30%;
 }
 
 .navbar {
@@ -124,17 +138,26 @@ header {
     align-items: center;
 }
 
-.nav {
+.navMenu {
     display: flex;
-    gap: 1rem;
+    height: 100%;
+    gap: 1.5rem;
     align-items: center;
 }
 
-.nav__item {
+.navMenu__item {
     color: #ffffff;
     text-decoration: none;
-    font-weight: 500;
+    display: flex;
+    align-items: center;
+    height: 100%;
     transition: color 0.3s ease;
+    font-family: "Manrope", sans-serif;
+    font-weight: 300;
+}
+
+.navMenu__item-active {
+    border-bottom: 3px solid #eee;
 }
 
 .nav__item:hover {
@@ -156,9 +179,12 @@ header {
     display: flex;
     background-color: rgba(255, 255, 255, 0.137);
     border: none;
-    padding: 1em;
-    font-family: "Inter", sans-serif;
+    padding: 1rem;
+    font-weight: 200;
+    font-size: 0.6rem;
     backdrop-filter: blur(2px);
+    text-transform: capitalize;
+    gap: 6px;
     border-radius: 10px;
     color: white;
     -webkit-backdrop-filter: blur(2px);
@@ -167,7 +193,7 @@ header {
 mark {
     color: white;
     background-color: transparent;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 span {
@@ -176,25 +202,26 @@ span {
 }
 
 input[type="radio"] {
-  accent-color: red;
-  color: black;
+    accent-color: red;
+    color: black;
 }
 
 .booking-widget {
     background-color: white;
     position: absolute;
     padding: 40px;
+    height: 200px;
     border-radius: 20px;
-    width:70%;
-    bottom: -30%;
-    left:10%;
+    width: 800px;
+    bottom: -150px;
+    left: calc(50% - 400px);
     max-width: 1100px;
     overflow: visible;
     color: #333;
-    display: relative; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    display: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     z-index: 2;
-    
+
 }
 
 .booking-widget__type {
@@ -214,12 +241,52 @@ input[type="radio"] {
 
 .booking-widget__grid {
     display: grid;
-    grid-template-columns: 2fr 0.2fr 2fr 1.5fr 1.5fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     align-items: center;
     margin-bottom: 20px;
+
+
+    border-radius: 10px;
+}
+
+.booking-widget__grid-destination {
+    display: flex;
+    height: 100%;
     border: 1px solid #eee;
-    padding: 10px;
+    border-radius: 10px;
+}
+
+.booking-widget__swap {
+    display: flex;
+    align-items: center;
+    border: 0.2px solid #eee;
+    position: relative;
+    background: white;
+    background-color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.booking-widget__swap::after{
+    content: "⇄";
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    left: calc(50% - 15px);
+    top: calc(50% - 15px);
+    background-color: white;
+    color: green;
+}
+
+
+.booking-widget__grid-date {
+    display: flex;
+    border: 1px solid #eee;
+    justify-content: space-between;
     border-radius: 10px;
 }
 
@@ -228,20 +295,35 @@ input[type="radio"] {
     flex-direction: column;
     padding: 10px;
     position: relative;
+    /* border: 1px solid; */
+    width: 100%;
 }
 
+.input-group>img{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: calc(50% - 10px);
+    right: 10px;
+    z-index: 3;
+}
+#left-margin{
+    border-left: 1px solid #eee ;
+}
 .input-group__label {
     font-size: 0.75rem;
-    color: #888;
-    text-transform: uppercase;
-    font-weight: 700;
+    color: #022833;
+    opacity: 60%;
+    text-transform: capitalize;
+    font-weight: 400;
 }
 
 .input-group__field {
     border: none;
     font-size: 1rem;
-    font-weight: 600;
-    color: #000;
+    font-weight: 400;
+    text-transform: capitalize;
+    color: #000000b9;
     outline: none;
     margin-top: 5px;
     width: 100%;
@@ -251,19 +333,10 @@ input[type="radio"] {
     position: absolute;
     right: 10px;
     top: 50%;
-    color: #ccc;
+    color: #c2c2c2;
 }
 
-.booking-widget__swap {
-    position: relative;
- 
-    background: white;
-    border: none;
-    background-color: white;
-    color: green;
-    cursor: pointer;
-    font-size: 1.2rem;
-}
+
 
 .booking-widget__options {
     display: grid;
@@ -285,11 +358,8 @@ input[type="radio"] {
 
 .booking-widget__footer {
     position: absolute;
-    bottom: -25px; 
+    bottom: -25px;
     left: 0;
     right: 0;
     text-align: center;
 }
-
-
-
